@@ -12,6 +12,9 @@
   --cards-cl: #e7e9fc;
   --customers-icon: #8e8f99;
   --footer-hover: #31d0aa;
+  --modal-bg: #fcfcfc;
+  --transition-duration: 250ms;
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -70,6 +73,7 @@ body {
 }
 
 .header-li-link {
+  position: relative;
   color: var(--secondary-txt-cl);
   padding: 24px 0;
 }
@@ -77,6 +81,27 @@ body {
 .header-li-link:hover,
 .header-li-link:focus {
   color: var(--hover-cl);
+}
+
+.header-li-link::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  display: block;
+  border-radius: 2px;
+}
+
+.header-li-link.current{
+  color: var(--hover-cl);
+}
+
+.header-li-link.current::after,
+.header-li-link:hover::after,
+.header-li-link:focus::after{
+  background-color: var(--hover-cl);
 }
 
 .header-main-address {
@@ -289,7 +314,7 @@ body {
   background-color: var(--hover-cl);
 }
 
-.team-icons{
+.team-icons {
   width: 40px;
   height: 40px;
 }
@@ -411,14 +436,37 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.main-card-link{
+.main-card-link {
   display: block;
 }
 
 .main-card-link:hover,
-.main-card-link:focus{
+.main-card-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-  0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-div-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--section-cl);
+  background-color: var(--accent-cl);
+  padding: 40px 32px 0;
+  transform: translate(0, 100%);
+  transition: transform 500ms linear;
+}
+
+.main-card-link:hover .overlay,
+.main-card-link:focus .overlay {
+  transform: translate(0, 0);
 }
 /* Footer */
 
@@ -452,7 +500,7 @@ body {
 .footer-container {
   display: flex;
   align-items: baseline;
-  margin-right: 120px;
+  gap: 120px;
 }
 
 .footer-social-media {
@@ -489,8 +537,69 @@ body {
   background-color: var(--footer-hover);
 }
 
-.footer-svg-icon{
+.footer-svg-icon {
   fill: var(--section-cl);
+}
+
+/* Modal */
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity var(--transition-duration) var(--transition-timing-function), visibility var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 584px;
+  background-color: var(--modal-bg);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-button{
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--cards-cl);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal-close-icon{
+  transition: fill var(--transition-duration) var(--transition-timing-function);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus{
+  background-color: var(--hover-cl);
+  cursor: pointer;
+}
+
+.modal-close-button:hover .modal-close-icon,
+.modal-close-button:focus .modal-close-icon{
+  fill: var(--background-cl);
+}
+
+.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 /* Reset */
 
