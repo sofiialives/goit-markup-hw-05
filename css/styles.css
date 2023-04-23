@@ -83,7 +83,7 @@ body {
   color: var(--hover-cl);
 }
 
-.header-li-link::after{
+.current::after{
   content: '';
   position: absolute;
   left: 0;
@@ -92,16 +92,11 @@ body {
   height: 4px;
   display: block;
   border-radius: 2px;
+  background-color: var(--hover-cl);
 }
 
 .header-li-link.current{
   color: var(--hover-cl);
-}
-
-.header-li-link.current::after,
-.header-li-link:hover::after,
-.header-li-link:focus::after{
-  background-color: var(--hover-cl);
 }
 
 .header-main-address {
