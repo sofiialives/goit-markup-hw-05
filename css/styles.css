@@ -76,6 +76,7 @@ body {
   position: relative;
   color: var(--secondary-txt-cl);
   padding: 24px 0;
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .header-li-link:hover,
@@ -105,6 +106,7 @@ body {
 
 .header-address-link {
   color: var(--main-txt-cl);
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .header-address-link:hover,
@@ -174,11 +176,12 @@ body {
   cursor: pointer;
   margin-left: 493px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .banner-button:hover,
 .banner-button:focus {
-  background: var(--hover-cl);
+  background-color: var(--hover-cl);
   cursor: pointer;
 }
 
@@ -302,6 +305,7 @@ body {
   fill: var(--section-cl);
   background-color: var(--accent-cl);
   border-radius: 50%;
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .team-icons-link:hover,
@@ -333,6 +337,7 @@ body {
   height: 100%;
   border: 1px solid var(--customers-icon);
   border-radius: 4px;
+  transition: color var(--transition-duration) var(--transition-timing-function), border-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .customers-link:hover,
@@ -420,10 +425,11 @@ body {
   padding: 12px 24px;
   border: 1px solid var(--cards-cl);
   border-radius: 4px;
+  transition: background-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function);
 }
 .main-button:hover,
 .main-button:focus {
-  background: var(--hover-cl);
+  background-color: var(--hover-cl);
   color: var(--background-cl);
   cursor: pointer;
   border: 1px solid transparent;
@@ -433,6 +439,7 @@ body {
 
 .main-card-link {
   display: block;
+  transition: box-shadow var(--transition-duration) var(--transition-timing-function);
 }
 
 .main-card-link:hover,
@@ -456,7 +463,7 @@ body {
   background-color: var(--accent-cl);
   padding: 40px 32px 0;
   transform: translate(0, 100%);
-  transition: transform 500ms linear;
+  transition: transform var(--transition-duration) var(--transition-timing-function);
 }
 
 .main-card-link:hover .overlay,
@@ -525,6 +532,7 @@ body {
   height: 100%;
   background-color: var(--accent-cl);
   border-radius: 50%;
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .footer-icons-link:hover,
