@@ -425,7 +425,7 @@ body {
   padding: 12px 24px;
   border: 1px solid var(--cards-cl);
   border-radius: 4px;
-  transition: background-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function);
+  transition: background-color var(--transition-duration) var(--transition-timing-function), color var(--transition-duration) var(--transition-timing-function), box-shadow var(--transition-duration) var(--transition-timing-function), border var(--transition-duration) var(--transition-timing-function);
 }
 .main-button:hover,
 .main-button:focus {
@@ -502,7 +502,10 @@ body {
 .footer-container {
   display: flex;
   align-items: baseline;
-  gap: 120px;
+}
+
+.footer-second-container{
+  margin-left: 120px;
 }
 
 .footer-social-media {
